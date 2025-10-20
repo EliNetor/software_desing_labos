@@ -89,7 +89,15 @@ public class Hotel {
             TODO: Check availability across [startDate, endDate].
             TIP: Read this entire file first.
         */
-        return -2;
+        if (isValidDate(startDate)
+                && isValidDate(endDate)
+                && isValidDateRange(startDate, endDate)
+                && roomCount > 0) {
+            for (int j : rooms.keySet()){
+                if(isRoomFree(rooms.get(j), startDate, endDate)) return j;;
+            };
+        }
+        return -1;
     }
 
     /**

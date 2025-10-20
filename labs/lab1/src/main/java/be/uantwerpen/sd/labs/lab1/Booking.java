@@ -93,7 +93,11 @@ public class Booking {
             TODO: Check availability, then book the returned room; propagate hotel.bookRoom result
             TIP: Read Hotel.java.
         */
-        return -2;
+        Hotel hotel = hotels.get(hotelID);
+        int room_id = hotel.checkAvailability(date);
+        if (room_id == -1) return -1;
+        hotel.bookRoom(date, room_id);
+        return 0;
     }
 
     /**
@@ -109,7 +113,11 @@ public class Booking {
             TODO: Check availability across [startDate, endDate], then book the returned room for the full range; propagate hotel.bookRoom result
             TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
         */
-        return -2;
+        Hotel hotel = hotels.get(hotelID);
+        int room_id = hotel.checkAvailability(startDate, endDate);
+        if (room_id == -1) return -1;
+        hotel.bookRoom(startDate, endDate, room_id);
+        return 0;
     }
 
 
@@ -126,6 +134,27 @@ public class Booking {
             TODO: Find the cheapest hotel with availability across [startDate, endDate]; then book the entire range in that hotel and return its ID
             TIP: Read Hotel.java. Implement 'checkAvailability(long startDate, long endDate)'
         */
-        return -2;
+        Hotel  cheapestHotel = null;
+        double cheapestPrice = Double.MAX_VALUE;
+        int cheapestHotelID = -1;
+
+        for (int hotel_id : hotels.keySet()) {
+            Hotel hotel = hotels.get(hotel_id);
+            if (hotel.getPricePerRoom() < cheapestPrice
+                    && cheapestPrice >= 0
+                    &&  hotel.checkAvailability(startDate, endDate) != -1) {
+                cheapestHotel = hotel;
+                cheapestPrice = hotel.getPricePerRoom();
+                cheapestHotelID = hotel_id;
+            }
+        }
+
+        int success = -1;
+        if (cheapestHotel != null) {
+            success = bookRoomInHotel(startDate, endDate, cheapestHotelID);
+        }
+
+        if (success == 0) return cheapestHotelID;
+        return success;
     }
 }
