@@ -1,7 +1,5 @@
-package be.uantwerpen.sd.labs.lab2.classdiagrams.inheritance;
+package be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions;
 
-import be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions.Circle;
-import be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions.Shape;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

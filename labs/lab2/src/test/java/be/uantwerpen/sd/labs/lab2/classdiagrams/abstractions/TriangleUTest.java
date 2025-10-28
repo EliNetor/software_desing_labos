@@ -1,6 +1,4 @@
-package be.uantwerpen.sd.labs.lab2.classdiagrams.inheritance;
-import be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions.EquilateralTriangle;
-import be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions.Shape;
+package be.uantwerpen.sd.labs.lab2.classdiagrams.abstractions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
