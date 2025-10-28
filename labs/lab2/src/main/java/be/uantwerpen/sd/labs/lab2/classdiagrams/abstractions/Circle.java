@@ -6,5 +6,15 @@ Methods you will implement:
   - double calcCircumference()
   - double calcArea()
 */
-public class Circle {
+public class Circle extends Shape {
+    public Circle(double radius, String name) {
+        super(radius, name);
+    }
+    @Override
+    public double calcArea() {
+        return Math.PI*size*size;
+    }
+    public double calcCircumference() {
+        return Math.PI*size*2;
+    }
 }
