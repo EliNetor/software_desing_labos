@@ -15,4 +15,21 @@ Methods you will implement:
 TIP: lowerVolume() should call volumeDown() on each device; riseVolume() should call volumeUp() on each device.
 */
 class UniversalRemote {
+    private List<VolumeDevice> devices = new ArrayList<>();
+
+    public void addDevice(VolumeDevice device){
+        devices.add(device);
+    }
+
+    public void lowerVolume(){
+        for (VolumeDevice device : devices){
+            device.volumeDown();
+        }
+    }
+
+    public void riseVolume(){
+        for (VolumeDevice device : devices){
+            device.volumeUp();
+        }
+    }
 }
