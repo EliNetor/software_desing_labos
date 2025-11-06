@@ -12,5 +12,16 @@ Methods you will implement:
   - void propertyChange(PropertyChangeEvent evt)
 TIP: Choose a small threshold like 3 for demo. Don't forget to implement the correct Class. In your message use at least `REORDER:` and the quantity.
 */
-public class ReorderService {
+public class ReorderService implements PropertyChangeListener {
+    public int threshold;
+    public ReorderService(int threshold) {
+        this.threshold = threshold;
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt){
+        if ((int) evt.getNewValue() < threshold){
+            System.out.println("REORDER: New value " + evt.getNewValue()); //+ " is less than threshold " + threshold
+        }
+    }
 }

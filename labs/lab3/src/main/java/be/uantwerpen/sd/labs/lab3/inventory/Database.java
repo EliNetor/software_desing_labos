@@ -15,4 +15,9 @@ Methods you will implement:
 TIP: Hold a PropertyChangeSupport; expose add/remove; a protected notify helper is handy.
 */
 public abstract class Database {
+    private PropertyChangeSupport pcs;
+
+    public void addListener(PropertyChangeListener l){};
+    public void removeListener(PropertyChangeListener l){};
+    protected void notifyObservers(String event, Object oldV, Object newV){};
 }
