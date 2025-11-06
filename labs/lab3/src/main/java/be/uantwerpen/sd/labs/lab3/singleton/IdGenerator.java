@@ -10,6 +10,15 @@ TIP: Make sure to define the constructor and variables correctly. A counter fiel
 */
 public class IdGenerator {
     private long counter = 0;
+    private IdGenerator() {}
+    private static IdGenerator single_instance = null;
+
+    public static IdGenerator getInstance() {
+        if (single_instance == null) {
+            single_instance = new IdGenerator();
+        }
+        return single_instance;
+    }
 
     public long nextId() {
         return ++counter;
