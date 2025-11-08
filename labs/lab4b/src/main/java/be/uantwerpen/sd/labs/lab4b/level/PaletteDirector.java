@@ -6,6 +6,13 @@ public final class PaletteDirector {
             TODO: Implement this method.
             TIP: It should call every method of the builder and then return the build object.
         */
-        return null;
+        b.buildBackground();
+        b.buildWall();
+        b.buildTarget();
+        b.buildPlayer();
+        b.buildFloor();
+        b.buildBox();
+
+        return b.build();
     }
 }
