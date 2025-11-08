@@ -47,14 +47,14 @@ public class InventoryDB extends Database{
             TODO: Set stock for a sku and notify observers.
             TIP: Read old value, put new value, then notify with event name 'stockChanged'.
         */
-        int oldQty = 0;
+        Integer oldQty = null;
         if (stock.get(sku) != null) {
             oldQty = stock.get(sku);
         }
 
         stock.put(sku, newQty);
 
-        if (oldQty != newQty) {
+        if (oldQty == null || oldQty != newQty) {
             notifyObservers("stockChanged", oldQty, newQty);
         }
     }
