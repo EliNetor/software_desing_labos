@@ -33,76 +33,85 @@ public final class GlacierKit extends LevelKit {
         static final LevelKit INSTANCE = new GlacierKit();
     }
 
+    @Override
     public MovementStrategy movement() {
         /*
             TODO: Return the correct MovementStrategy.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierMovementStrategy(this);
     }
 
+    @Override
     public WorldGenerator generator() {
         /*
             TODO: Return the correct WorldGenerator.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierWorldGenerator();
     }
 
+    @Override
     public Level level() {
         /*
             TODO: Return the correct Level.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierLevel();
     }
 
+    @Override
     public GroundTile floor() {
         /*
             TODO: Return the correct Floor.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierFloor();
     }
 
+    @Override
     public GroundTile wall() {
         /*
             TODO: Return the correct Wall.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierWall();
     }
 
+    @Override
     public GroundTile target() {
         /*
             TODO: Return the correct Target.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierTarget();
     }
 
+    @Override
     public Box box() {
         /*
             TODO: Return the correct Box.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierBox();
     }
 
+    @Override
     public Player player() {
         /*
             TODO: Return the correct Player.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new  GlacierPlayer();
     }
 
+    @Override
     public CoveragePolicy coverage() {
         /*
             TODO: Return the correct CoveragePolicy.
             TIP: Ensure that this abstract factory creates Glacier Objects.
         */
-        return null;
+        return new GlacierCoveragePolicy();
     }
 
     public PaletteBuilder paletteBuilder() {
@@ -110,6 +119,7 @@ public final class GlacierKit extends LevelKit {
             TODO: Return the correct PaletteBuilder.
             TIP: The glacier theme can be obtained using 'AppConfig.get().themeGlacier'
         */
-        return null;
+
+        return new ThemedPaletteBuilder(AppConfig.get().themeGlacier);
     }
 }

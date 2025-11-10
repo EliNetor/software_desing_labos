@@ -13,7 +13,7 @@ public final class GlacierBox extends Box {
             TODO: Implement the slidesOn method.
             TIP: The provided tile object has a field defining whether or not the ground is slippery.
         */
-        throw new UnsupportedOperationException("TODO: Implement the slidesOn method.");
+        return tile.isSlippery();
     }
 
     @Override

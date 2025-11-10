@@ -9,7 +9,7 @@ import be.uantwerpen.sd.labs.lab4b.model.domain.Player;
 /*
 TODO: Implement the Abstract Factory Pattern here.
 */
-public class LevelKit {
+public abstract class LevelKit {
 
     public String name() {
         return getClass().getSimpleName().replace("Kit", "");
@@ -27,88 +27,65 @@ public class LevelKit {
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public MovementStrategy movement() {
-        return null;
-    }
+    public abstract MovementStrategy movement();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public WorldGenerator generator() {
-        return null;
-    }
+    public abstract WorldGenerator generator();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public RendererHints hints() {
-        return null;
-    }
+    public abstract RendererHints hints();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public Level level() {
-        return null;
-    }
+    public abstract Level level();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public GroundTile floor() {
-        return null;
-    }
+    public abstract GroundTile floor();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public GroundTile wall() {
-        return null;
-    }
+    public abstract GroundTile wall();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public GroundTile target() {
-        return null;
-    }
+    public abstract GroundTile target();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public Box box() {
-        return null;
-    }
+    public abstract Box box();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public Player player() {
-        return null;
-    }
+    public abstract Player player();
+    /*
+		TODO: Something about this method declaration needs to be changed.
+		TIP: What type of class should this be?
+	*/
+    public abstract CoveragePolicy coverage();
 
     /*
 		TODO: Something about this method declaration needs to be changed.
 		TIP: What type of class should this be?
 	*/
-    public CoveragePolicy coverage() {
-        return null;
-    }
-
-    /*
-		TODO: Something about this method declaration needs to be changed.
-		TIP: What type of class should this be?
-	*/
-    public PaletteBuilder paletteBuilder() {
-        return null;
-    }
+    public abstract PaletteBuilder paletteBuilder();
 
 }
